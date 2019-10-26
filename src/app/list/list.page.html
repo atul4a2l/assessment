@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Users
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid style="height: 100%" *ngIf="userLists.length==0">
+    <ion-row class="ion-align-items-center ion-justify-content-center" style="height: 100%; flex-direction: column">
+      <ion-spinner name="crescent" color="primary"></ion-spinner>
+    </ion-row>
+  </ion-grid>
+  <ion-list *ngIf="userLists">
+    <ion-item *ngFor="let user of userLists" (click)="update(user)">
+      <ion-icon name="person" slot="start"></ion-icon>
+      {{user.user_name}}
+      <div class="item-note" slot="end">
+        {{user.user_phone}}
+      </div>
+    </ion-item>
+  </ion-list>
+</ion-content>

@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Create User
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+    <form *ngIf="createUserDetailForm" [formGroup]="createUserDetailForm">
+      <ion-item>    
+      <ion-label position="floating">Name</ion-label>
+          <ion-input formControlName="user_name"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Email</ion-label>
+          <ion-input formControlName="user_email"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Age</ion-label>
+          <ion-input formControlName="user_age"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Phone</ion-label>
+          <ion-input type="tel" maxlength="10" formControlName="User_phone"></ion-input>
+        </ion-item>
+        <ion-button expand="block" [disabled]="!createUserDetailForm.valid" (click)="create()">Create</ion-button>
+      </form>
+</ion-content>
